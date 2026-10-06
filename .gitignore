@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.pt
+*.pth
+.DS_Store
+Thumbs.db
+
+# build outputs
+build/
+bin/
+*.exe
+*.vst3
+*.component
+*.dylib
+*.so
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# raw dataset cache
+training/data/*.wav
+training/data/*.pt
+training/models/*.pt
+training/models/*.json
+training/evaluation/*.wav

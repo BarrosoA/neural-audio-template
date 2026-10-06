@@ -1,0 +1,8 @@
+# 1. apply optional pre-emphasis fir high pass filter y[n] - coeff * y[n-1] (targets treble distortion bite)
+# 2. compute esr loss measuring normalized time domain waveform error (checks overall wave match)
+# 3. compute dc loss penalizing mean prediction bias offset against target (kills sub rumble and offset)
+# 4. compute multi resolution stft loss across fft sizes 512 1024 2048 (checks low mid high tonal balance)
+# 5. combine spectral convergence and log magnitude with -70 db floor (matches harmonic color and ignores noise floor)
+# 6. build compound loss module combining esr stft and dc with config weights (joins all metrics into one score)
+# 7. mask initial burn in samples to let recurrent states settle (ignores initial click while circuit warms up)
+# 8. add self test verifying compound loss forward and backward gradients (confirms scoring and learning work)

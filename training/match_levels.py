@@ -1,0 +1,7 @@
+# 1. load audio files for dry input and rendered wet outputs across knob sweep (loads clean and processed audio)
+# 2. measure integrated loudness in lufs using pyloudnorm or compute rms peak dbfs (measures human perceived volume)
+# 3. normalize all audio passes to uniform target lufs level (sets all files to equal baseline volume)
+# 4. calculate volume delta between dry reference and wet outputs across drive sweep (tracks volume jumps from drive)
+# 5. fit gain curve polynomial or generate calibration lookup table (creates auto volume compensation curve)
+# 6. export gain calibration coefficients or lookup table to model json metadata (saves volume fix into plugin data)
+# 7. render level matched wav files to output folder (saves equal volume tracks for blind a-b listening)

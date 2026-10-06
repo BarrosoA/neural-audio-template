@@ -1,0 +1,28 @@
+{
+  "model_name": "neural_analog_model",
+  "model_type": "gru",
+  "sample_rate": 44100,
+  "conditioning_params": ["drive"],
+  "hidden_size": 48,
+  "use_residual": false,
+  "training": {
+    "epochs": 40,
+    "batch_size": 32,
+    "sequence_length": 2048,
+    "burn_in": 128,
+    "learning_rate": 0.001,
+    "min_learning_rate": 0.00001,
+    "grad_clip_norm": 1.0
+  },
+  "loss": {
+    "use_pre_emphasis": true,
+    "pre_emphasis_coeff": 0.85,
+    "esr_weight": 1.0,
+    "stft_weight": 0.15,
+    "dc_weight": 0.05,
+    "stft_floor_db": -70.0,
+    "fft_sizes": [512, 1024, 2048],
+    "hop_sizes": [128, 256, 512],
+    "win_lengths": [512, 1024, 2048]
+  }
+}
